@@ -1,2 +1,4 @@
 services:
-  react-app
+  react-app:
+    build:
+      context: .
