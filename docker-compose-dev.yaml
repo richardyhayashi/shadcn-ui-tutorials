@@ -1,7 +1,7 @@
 services:
   nginx:
     image: nginx:1.27.0-alpine
-    container_name: nginx-${NEXTJS_IMAGE_NAME}
+    container_name: nginx-${NEXTJS_CONTAINER_NAME}
     restart: unless-stopped
     ports:
       - ${NGINX_PORT_OUT}:${NGINX_PORT}
@@ -21,7 +21,7 @@ services:
         NEXTJS_APP_NAME: ${PROJECT_NAME}
         NEXTJS_PORT: ${NEXTJS_PORT}
         NEXTJS_SRC_DIR: ${NEXTJS_SRC_DIR}
-    container_name: ${NEXTJS_CONTAINER_NAME}_c
+    container_name: ${NEXTJS_CONTAINER_NAME}
     restart: unless-stopped
     #ports:
     #  - ${NEXTJS_PORT_OUT}:${NEXTJS_PORT}
