@@ -16,6 +16,9 @@ COPY ./src/${NEXTJS_SRC_DIR}/package.json .
 # Install packages.
 RUN npm install
 
+# Install json-server
+RUN npm install -g json-server
+
 # Copy directory.
 COPY ./src/${NEXTJS_SRC_DIR} .
 #COPY ./src/ninja-recipes .
@@ -24,4 +27,5 @@ COPY ./src/${NEXTJS_SRC_DIR} .
 EXPOSE ${NEXTJS_PORT}
 
 # Start app.
-ENTRYPOINT [ "npm", "run", "dev" ]
+#ENTRYPOINT [ "npm", "run", "dev" ]
+#ENTRYPOINT [ "npm", "run", "dev", "&&", "json-server", "--watch", "./_data/db.json", "--port", "4000" ]

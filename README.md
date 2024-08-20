@@ -25,6 +25,17 @@ Or - |
 
 `$ npm run dev`
 
+## NextJS
+
+### Install json-server
+
+`$ npm install -g json-sesrver`
+
+### Start json-server
+
+`$ json-server --watch ./_data/db.json --port 4000`
+
+
 ## YouTube
 
 `Shadcn UI Crash Course` by `Net Ninja`
@@ -34,7 +45,7 @@ Source: `https://github.com/iamshaunjp/shadcn-ui-crash-course`
 Directory: src/ninja-recipes
 
 01. Introduction & Setup
-02.
+02. Card Components
 03.
 04.
 05.

@@ -21,12 +21,14 @@ services:
         NEXTJS_APP_NAME: ${PROJECT_NAME}
         NEXTJS_PORT: ${NEXTJS_PORT}
         NEXTJS_SRC_DIR: ${NEXTJS_SRC_DIR}
+    command: sh -c "npm run dev && json-server --watch ./_data/db.json --port 4000"
     container_name: ${NEXTJS_CONTAINER_NAME}
     restart: unless-stopped
     #ports:
     #  - ${NEXTJS_PORT_OUT}:${NEXTJS_PORT}
     volumes:
       - ./src/${NEXTJS_SRC_DIR}:/app
+      - next_dir:/app/.next
       - node_modules:/app/node_modules
     environment:
       NODE_ENV: development
@@ -36,4 +38,5 @@ services:
       - nginx
 
 volumes:
+  next_dir:
   node_modules:
