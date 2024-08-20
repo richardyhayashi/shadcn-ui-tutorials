@@ -1,2 +1,4 @@
 services:
-  react-app
+  nextjs-app:
+    build:
+      context: .
