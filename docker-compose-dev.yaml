@@ -1,6 +1,7 @@
 services:
   nginx:
     image: nginx:1.27.0-alpine
+    container_name: nginx-${NEXTJS_IMAGE_NAME}
     restart: unless-stopped
     ports:
       - ${NGINX_PORT_OUT}:${NGINX_PORT}
@@ -13,25 +14,26 @@ services:
     #  - ./.env
 
   nextjs-app:
-    image: ${NEXT_IMAGE_NAME}
+    image: ${NEXTJS_IMAGE_NAME}:1.0.0
     build:
       dockerfile: Dockerfile.dev
-    container_name: ${NEXT_CONTAINER_NAME}
+      args:
+        NEXTJS_APP_NAME: ${PROJECT_NAME}
+        NEXTJS_PORT: ${NEXTJS_PORT}
+        NEXTJS_SRC_DIR: ${NEXTJS_SRC_DIR}
+    container_name: ${NEXTJS_CONTAINER_NAME}_c
     restart: unless-stopped
-    ports:
-      - ${NEXTJS_PORT_OUT}:${NEXTJS_PORT}
+    #ports:
+    #  - ${NEXTJS_PORT_OUT}:${NEXTJS_PORT}
     volumes:
-      - ./src:/app
+      - ./src/${NEXTJS_SRC_DIR}:/app
       - node_modules:/app/node_modules
     environment:
-      - NODE_ENV=development
-      - NEXTJS_APP_NAME=${PROJECT_NAME}
-      - NEXTJS_PORT=${NEXTJS_PORT}
+      NODE_ENV: development
     #env_file:
-    #  - ./.env
+    #  - .env
     depends_on:
       - nginx
-
 
 volumes:
   node_modules:
