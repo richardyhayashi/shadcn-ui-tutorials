@@ -46,9 +46,9 @@ Directory: src/ninja-recipes
 
 01. Introduction & Setup
 02. Card Components
-03.
-04.
-05.
+03. Badges, Buttons & Avatars
+04. Skeleton Components
+05. Colour Themes
 
 
 `Build Your UI Component Library in React & Next.js | ShadCN UI for Beginners` by `Dave Gray`
