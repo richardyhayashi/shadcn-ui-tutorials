@@ -42,15 +42,18 @@ Directory: src/ninja-recipes
 
 `Build Your UI Component Library in React & Next.js | ShadCN UI for Beginners` by `Dave Gray`
 
-Source: -
+Source: `https://github.com/gitdagray/shadcn-ui-for-beginners`
 
 Directory: src/my-app
 
 01. Intro
-02.
-03.
-04.
-05.
+02. Welcome
+03. What is shadcn/ui?
+04. Suggested Prerequisites
+05. Installing shadcn/ui
+06. Adding Your First Component
+07.
+08.
 
 
 `Shadcn Component Library Course for Beginners` by `freeCodeCamp.org`, `@codeddesign`
